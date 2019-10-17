@@ -1,0 +1,49 @@
+{
+    "name": "New user activation email Workflow Zenaton sample project",
+    "description": "A sample Node.js web_app that uses Zenaton as an orchestration engine",
+    "repository": "https://github.com/zenaton/new-user-workflow",
+    "logo": "https://avatars0.githubusercontent.com/u/26751818?s=200&v=4",
+    "keywords": ["mail", "zenaton"],
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      },
+      {
+        "url": "zenaton/heroku-buildpack-zenaton"
+      }
+    ],
+    "env": {
+      "ZENATON_APP_ID": {
+        "description": "The Zenaton Application ID (find it on https://app.zenaton.com/api)",
+        "required": true
+      },
+      "ZENATON_API_TOKEN": {
+        "description": "The Zenaton API token (find it on https://app.zenaton.com/api)",
+        "required": true
+      },
+      "ZENATON_APP_ENV": {
+        "description": "The Zenaton environment",
+        "value": "dev",
+        "required": true
+      },
+      "ZENATON_LISTEN_ARGS": {
+        "description": "The Zenaton Agent listen args",
+        "value": "--boot=worker/boot.js --node",
+        "required": true
+      },
+      "ZENATON_SENDGRID_CONNECTOR_ID": {
+        "description": "Your Zenaton Sendgrid connection id (find it on https://app.zenaton.com/connectors). Follow our guide: https://github.com/zenaton/new-user-workflow/blob/master/doc/setup-sendgrid-connector.md",
+        "required": true
+      }
+    },
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "free"
+      },
+      "zenatonworker": {
+        "quantity": 1,
+        "size": "free"
+      }
+    }
+  }

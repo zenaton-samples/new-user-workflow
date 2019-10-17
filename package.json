@@ -1,0 +1,22 @@
+{
+  "name": "new-user-workflow",
+  "version": "1.0.0",
+  "description": "[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)",
+  "main": "index.js",
+  "scripts": {
+    "heroku-prebuild": "cd web_app && npm install && cd ../worker && npm install",
+    "heroku-postbuild": "cd web_app && npm run build",
+    "start": "cd web_app && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenaton/new-user-workflow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zenaton/new-user-workflow/issues"
+  },
+  "homepage": "https://github.com/zenaton/new-user-workflow#readme"
+}

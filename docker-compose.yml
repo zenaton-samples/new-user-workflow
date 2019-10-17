@@ -1,0 +1,13 @@
+version: "3"
+services:
+  zenaton_mail_sample_project:
+    build: .
+    volumes:
+      - app:/app
+    ports:
+      - "4000:4000"
+    env_file:
+      - worker/.env
+
+volumes:
+  app:

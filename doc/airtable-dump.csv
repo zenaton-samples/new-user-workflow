@@ -1,0 +1,5 @@
+﻿block_name,block_content
+subject,How is it going with Zenaton ?
+block_intro,"Hi {{ name }}, "
+block_agent_installed,Look at our real-world example ...
+block_agent_not_installed,Have you seen our tutorial ?
