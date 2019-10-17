@@ -36,7 +36,7 @@ We've provided a simple UI in the web_app that allows you to simulate the user e
 
 - Set up your SendGrid api connector on the Zenaton dashboard using our [guide](/doc/setup-sendgrid-connector.md).
 - Fork the repo so that you can easily change the variables and logic within the workflow and see the impact.  
-- deploy it using this button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) or choose one of our [deployment options](#other-options-to-deploy-your-project)
+- deploy it using this button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) or this [link](https://heroku.com/deploy?template=https://github.com/zenaton/new-user-workflow) if the button do not work. We also have other [deployment options](#other-options-to-deploy-your-project)
 
 
 Then you can start to use it:
