@@ -1,7 +1,7 @@
 # New User Activation Emails: 
 ### Wait for events and trigger emails:
 
-Here is a sample Zenaton project that triggers emails within a web app when the user completes installation and running their first workflow.  Our example is based on a Zenaton new user journey but can easily be configured to send emails and trigger actions based on any events within an app or external services.
+Here is a sample Zenaton project that waits for events within a web app and triggers personalized emails to our users when they complete each milestone (Installation and Activation).  Our example is based on a Zenaton new user journey but can easily be configured to send emails and trigger actions based on any events within an app or in external services.
 
 ## Workflow Logic
 
@@ -13,7 +13,7 @@ This workflow will wait for events and trigger actions - including emails - when
 
 In our sample web_app, we send 2 events to our workflow to trigger activities (`installation`, and `activation`).  
 
-We use several Zenaton functions in our workflow such as 'wait for event' and 'wait for duration' and connectors to manage the authentication for Sendgrid and Airtable.  
+We use several Zenaton functions in our workflow such as 'wait for event' and 'wait for duration' as well as connectors to manage the authentication for Sendgrid and Airtable.  
 
 The github repository is split into two directories:
 
@@ -40,13 +40,13 @@ We've provided a simple UI in the web_app that allows you to simulate the user e
 
 
 Then you can start to use it:
-- Click on 'Register' to simulate signup which launches the workflow.
-- Click on the 'installation' and 'activation' buttons to simulate sending events to the workflow.
+- Click on 'Register' to simulate signup which launches the workflow instance for a user.
+- Click on the 'installation' and 'activation' buttons to simulate sending events to the running workflow for that user.
 
 
 Feel free to play around and test the different scenarios.
 
-Note: you can also change the 'wait' duration to 5 seconds to speed up your experience.
+Note: you can also change the 'wait' duration to 5 seconds to speed up your testing experience.
 
 ## Other Workflow Versions
 
