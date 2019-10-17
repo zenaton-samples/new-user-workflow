@@ -70,7 +70,7 @@ If you want to take it to the next level and customize your workflow, here are a
 
 - Run on your local environment using docker or by installing Zenaton on your computer
 
-- Run on your servers
+- Run on your servers [(View the Zenaton Docs)](https://zenaton.com/documentation/node/going-to-production/#intro)
 
 ### Run locally
 
