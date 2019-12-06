@@ -1,7 +1,7 @@
 # New User Activation Emails: 
 ### Wait for events and trigger emails:
 
-Here is a sample Zenaton project that waits for events within a web app and triggers personalized emails to our users when they complete each milestone (Installation and Activation).  Our example is based on a Zenaton new user journey but can easily be configured to send emails and trigger actions based on any events within an app or in external services.
+Here is a sample Zenaton project that waits for events within a web app and triggers personalized emails to our users when they complete each milestone (Installation and Activation).  Our example is based on a Zenaton new user journey but can easily be configured to send emails and trigger actions based on any event within an app or in external services.
 
 ## Workflow Logic
 
@@ -11,36 +11,36 @@ This workflow will wait for events and trigger actions - including emails - when
 
 ![Workflow chart](/doc/images/flowchart.png)
 
-In our sample web_app, we send 2 events to our workflow to trigger activities (`installation`, and `activation`).  
+In our sample web app, we send 2 events to our workflow to trigger activities (`installation`, and `activation`).  
 
-We use several Zenaton functions in our workflow such as 'wait for event' and 'wait for duration' as well as connectors to manage the authentication for Sendgrid and Airtable.  
+We use several Zenaton functions in our workflow such as 'wait for event' and 'wait for duration', as well as connectors, to manage the authentication for SendGrid and AirTable.  
 
 The github repository is split into two directories:
 
-- **[web_app](/web_app)**: a simple NodeJS web app where we launch the workflow instance per user when they register and send events when the user installs or runs their first workflow.
-- **[worker](/worker)**: Runs the workflow and tasks and receives the events for each workflow instance.
+- **[web_app](/web_app)**: a simple NodeJS web app where we launch a workflow instance for each user when they register and send events when the user installs or runs their first workflow.
+- **[worker](/worker)**: Runs the workflow and tasks, and receives the events for each workflow instance.
 
 ## Web_App UI for testing
 
-We've provided a simple UI in the web_app that allows you to simulate the user events (`installation` or `activation`) to trigger actions in the workflow and see the corresponding tasks executions on your Zenaton dashboard:
+We've provided a simple UI in the `web_app` that allows you to simulate the user events (`installation` or `activation`) to trigger actions in the workflow and see the corresponding tasks executions on your Zenaton dashboard:
 
 ![Sample we_app and Zenaton dashboard](/doc/images/web-app-dashboard.png)
 
 # Requirements:
 
-- A [Zenaton](https://app.zenaton.com) account (its free!)
-- An API key from [Sendgrid](https://app.sendgrid.com/settings/api_keys), to connect Zenaton to Sendgrid. Show our [guide](/doc/create-sendgrid-account.md)
-- Optional: An AirTable [ApiKey](https://airtable.com/api) (only if you use airtable to modify email content)
+- A [Zenaton](https://app.zenaton.com) account (it's free!)
+- An API key from [SendGrid](https://app.sendgrid.com/settings/api_keys), to connect Zenaton to SendGrid. See our [guide](/doc/create-sendgrid-account.md)
+- Optional: An AirTable [API Key](https://airtable.com/api) (only if you use AirTable to modify email content)
 
-## Basic Workflow Version: Send a email based on user actions within your app
+## Basic Workflow Version: Send an email based on user actions within your app
 
-- Set up your SendGrid api connector on the Zenaton dashboard using our [guide](/doc/setup-sendgrid-connector.md).
+- Set up your SendGrid API connector on the Zenaton dashboard using our [guide](/doc/setup-sendgrid-connector.md).
 - Fork the repo so that you can easily change the variables and logic within the workflow and see the impact.  
-- deploy it using this button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) or this [link](https://heroku.com/deploy?template=https://github.com/zenaton/new-user-workflow) if the button do not work. We also have other [deployment options](#other-options-to-deploy-your-project)
+- Deploy it using this button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) or this [link](https://heroku.com/deploy?template=https://github.com/zenaton/new-user-workflow) if the button does not work. We also have other [deployment options](#other-options-to-deploy-your-project)
 
 
 Then you can start to use it:
-- Click on 'Register' to simulate signup which launches the workflow instance for a user.
+- Click on 'Register' to simulate signup, which launches the workflow instance for a user.
 - Click on the 'installation' and 'activation' buttons to simulate sending events to the running workflow for that user.
 
 
@@ -52,9 +52,9 @@ Note: you can also change the 'wait' duration to 5 seconds to speed up your test
 
 Here are a few other examples to send emails with conditional content.
 
-### Sendgrid Template with conditional blocks
+### SendGrid Template with conditional blocks
 
-To run this example, you will need to setup a dynamic template inside Sendgrid.
+To run this example, you will need to setup a dynamic template inside SendGrid.
 Here is our [guide](/doc/create-dynamic-template.md)
 
 ### Hybrid: Modify the email content from an AirTable database
@@ -62,7 +62,7 @@ Here is our [guide](/doc/create-dynamic-template.md)
 To run this example, you will need to
 - [import an AirTable base](/doc/create-airtable-table.md)
 - [get the API key](/doc/get-airtable-api-key.md) of this new base
-- setup a [Zenaton connector](/doc/setup-airtable-connector.md) for the airtable API
+- setup a [Zenaton connector](/doc/setup-airtable-connector.md) for the AirTable API
 
 ## Other options to deploy your project
 
