@@ -86,6 +86,11 @@ cp .env.sample .env
 
 Fill the `.env` file. Note that some environment variables are optional.
 
+Install the dependencies and build the assets
+```
+yarn && yarn build
+```
+
 Start the web_app
 ```
 yarn run start
@@ -100,8 +105,9 @@ curl https://install.zenaton.com | sh
 
 Then
 ```
-cd worker
+cd ../worker
 cp .env.sample .env
+yarn
 zenaton start
 zenaton listen --boot=boot.js
 ```
