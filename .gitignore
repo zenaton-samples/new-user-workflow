@@ -4,3 +4,4 @@ yarn.lock
 node_modules
 zenaton.err
 zenaton.out
+web_app/dist/bundle.js
