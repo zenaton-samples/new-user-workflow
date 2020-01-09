@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/zenaton/new-user-workflow/issues"
   },
-  "homepage": "https://github.com/zenaton/new-user-workflow#readme"
+  "homepage": "https://github.com/zenaton/new-user-workflow#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }

@@ -1,20 +1,12 @@
-const { task } = require("zenaton")
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-module.exports = task("SendEmailWithSendgrid", async function ({ email, subject, content }) {
-  const sendgrid = this.connector("sendgrid", process.env.ZENATON_SENDGRID_CONNECTOR_ID)
-
-  const params = {
-    body: {
-      personalizations: [
-        {
-          to: [{ email }],
-        }
-      ],
-      content: [{ type: 'text/html', value: content }],
-      subject: subject,
-      from: { name: 'Team Zenaton', email: 'hey@zenaton.com' },
-    }
-  }
-
-  await sendgrid.post("/mail/send", params)
-})
+module.exports = async function ({ email, subject, content }) {
+  const msg = {
+    to: [{ email }],
+    from: { name: 'Team Zenaton', email: 'hey@zenaton.com' },
+    subject,
+    html: content,
+  };
+  sgMail.send(msg);
+}

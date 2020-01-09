@@ -1,10 +1,8 @@
-require('dotenv').config()
+require('dotenv').config({ path: __dirname + "/.env" });
+const { workflow, task } = require("zenaton")
 
-require("./Workflows/NewUserWorkflow_basicEmail");
-require("./Workflows/NewUserWorkflow_dynamicTemplate");
-require("./Workflows/NewUserWorkflow_dataInAirTable");
+const newUserWorkflow =require("./Workflows/NewUserWorkflow");
+const sendEmail = require("./Tasks/SendEmailWithSendgrid");
 
-require("./Tasks/SendEmailWithSendgrid");
-require("./Tasks/SendEmailWithSendgridTemplate");
-require("./Tasks/SendEmailWithLocalTemplate");
-require("./Tasks/GetTemplateBlocksFromAirTable");
+task("SendEmailWithSendgrid", sendEmail);
+workflow('NewUserWorkflow', newUserWorkflow);
